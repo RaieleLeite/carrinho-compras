@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <title>Carrinho de compras</title>
+</head>
+
+<body>
+  <main class="conteudo-principal">
+    <div class="grafismo-azul" aria-hidden="true"></div>
+
+    <section class="adicionar-produto" aria-labelledby="titulo-carrinho">
+      <h1 id="titulo-carrinho" class="titulo">
+        Carrinho de <span class="texto-azul">compras</span>
+      </h1>
+
+      <form class="formulario" aria-label="Formulário para adicionar produtos ao carrinho">
+        <div class="campo-grupo">
+          <label for="produto" class="texto-medio-azul">Produto</label>
+          <select class="produto-input" name="produto" id="produto">
+            <option value="Fone de ouvido - R$100">Fone de ouvido - R$100</option>
+            <option value="Celular - R$1400">Celular - R$1400</option>
+            <option value="Oculus VR - R$5000">Oculus VR - R$5000</option>
+          </select>
+        </div>
+
+        <section class="parte-inferior">
+          <div class="campo-grupo">
+            <label for="quantidade" class="texto-medio-azul">Qtde.</label>
+            <input class="quantidade-input" id="quantidade" name="quantidade" type="number" placeholder="100" min="1" aria-required="true">
+          </div>
+
+          <div class="botoes-wrapper" role="group" aria-label="Ações do carrinho">
+            <button onclick="adicionar()" type="button" class="botao-form botao-adicionar" aria-label="Adicionar produto ao carrinho">Adicionar</button>
+            <button onclick="limpar()" type="button" class="botao-form botao-limpar" aria-label="Limpar produtos do carrinho">Limpar</button>
+          </div>
+        </section>
+      </form>
+    </section>
+
+    <section class="carrinho" aria-labelledby="produtos-carrinho">
+      <img src="./assets/carrinho-cinza.svg" alt="Imagem ilustrativa de um carrinho de compras cinza" aria-hidden="true">
+
+      <div class="titulo-wrapper">
+        <img src="./assets/icone-carrinho.svg" alt="Ícone de carrinho de compras">
+        <h2 id="produtos-carrinho" class="carrinho__titulo">Produtos no carrinho</h2>
+      </div>
+
+      <section class="carrinho__produtos" id="lista-produtos" aria-live="polite">
+        <!-- Produtos adicionados aparecerão aqui -->
+      </section>
+
+      <div class="divisoria" role="separator" aria-hidden="true"></div>
+
+      <p class="carrinho__total">
+        Total: <span class="texto-azul" id="valor-total">R$ 0</span>
+      </p>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
